@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdint.h>
+#include <sprocklets/Sprocklet_defs.h>
 
 #define DLED5V_DEVICE_ID 0xde01
 #define DLED5V_DEVICE_VERSION 0x0001
@@ -8,14 +9,13 @@
 /**********************************************
  * Registers
  */
-const uint8_t DLED5V_DEVICE_ID_REGISTER = 0x00;
-const uint8_t DLED5V_DEVICE_VERSION_REGISTER = 0x02;
-const uint8_t DLED5V_LED_STATE_REGISTER = 0x04;
-const uint8_t DLED5V_LED_EFFECT_REGISTER = 0x05;
-const uint8_t DLED5V_LED_BRIGHTNESS_REGISTER = 0x06;
-const uint8_t DLED5V_SW_TYPE_REGISTER = 0x07;
-const uint8_t DLED5V_SW_DETECT_REGISTER = 0x08;
-const uint8_t DLED5V_SW_STATE_REGISTER = 0x09;
+
+const uint8_t DLED5V_LED_STATE_REGISTER = SPROCKLET_START_REGISTER;
+const uint8_t DLED5V_LED_EFFECT_REGISTER = DLED5V_LED_STATE_REGISTER + 0x01;
+const uint8_t DLED5V_LED_BRIGHTNESS_REGISTER = DLED5V_LED_EFFECT_REGISTER + 0x01;
+const uint8_t DLED5V_SW_TYPE_REGISTER = DLED5V_LED_BRIGHTNESS_REGISTER + 0x01;
+const uint8_t DLED5V_SW_DETECT_REGISTER = DLED5V_SW_TYPE_REGISTER + 0x01;
+const uint8_t DLED5V_SW_STATE_REGISTER = DLED5V_SW_DETECT_REGISTER + 0x01;
 
 /**********************************************
  * Effects

@@ -1,0 +1,7 @@
+#pragma once
+#include <stdint.h>
+
+const uint8_t SPROCKLET_DEVICE_ID_REGISTER = 0x00;
+const uint8_t SPROCKLET_DEVICE_VERSION_REGISTER = 0x02;
+const uint8_t SPROCKLET_DEVICE_ADDRESS_REGISTER = 0x04;
+const uint8_t SPROCKLET_START_REGISTER = 0x05;
